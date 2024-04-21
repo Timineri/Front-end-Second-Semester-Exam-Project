@@ -1,0 +1,82 @@
+.repo-card {
+    background-color: black;
+    color: whitesmoke;
+    font-size: 16px;
+    width: 25em;
+   font-family: sans-serif;
+    border: 2px solid #130e4a;
+    border-radius: 1.5em;
+    box-shadow: #130e4a;
+    padding: 1.5em;
+    line-height: 2em;
+}
+
+#repodetail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.repodetail-card {
+    background-color: black;
+    color: whitesmoke;
+    font-size: 16px;
+    width: 25em;
+    font-family: sans-serif;
+    border: 2px solid #130e4a;
+    border-radius: 1.5em;
+    box-shadow: #130e4a;
+    padding: 1.5em;
+    line-height: 2em;
+    
+}
+
+.repo-name{
+    color: #130e4a;
+    font-size: 25px;
+
+}
+
+.repo-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    column-gap: 3em;
+    row-gap: 3em;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+    background-color: #130e4a;
+    margin-bottom: 1em;
+    font-size: 2em;
+    color: whitesmoke;
+}
+
+.view-more{
+    font-size: 20px;
+    margin-top: 3em;
+    text-align: center;
+    cursor: pointer;
+    background-color: #130e4a;
+    color: whitesmoke;
+   
+}
+
+.github-icon{
+    margin-right: 2em;
+    font-size: 3em;
+}
+
+.error-page{
+    text-align: center;
+    font-size: 2em;
+    background-image: url("404page3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    line-height: 2em;
+    color: whitesmoke;
+}

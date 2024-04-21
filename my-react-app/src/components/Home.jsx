@@ -1,5 +1,9 @@
-// import "../css/index.css"
+import "../css/index.css"
 import { useEffect, useState } from "react"
+import { Link } from 'react-router-dom'
+import Navbar from "./Navbar"
+
+
 
 function Home() { 
   
@@ -32,7 +36,7 @@ function Home() {
   const userElements = user.map((userElement) => {
         return (
             <div className="repo-card" key={userElement.id}>
-                <h2 className="repo-name">{userElement.name}</h2>
+                <Link to={`/Repodetails/${userElement.name}`}><h2 className="repo-name">{userElement.name}</h2></Link>
                 <p className="language">Langauge: {userElement.language === null ? "none" : userElement.language}</p>
                 <p className="date">Start date & time: {userElement.created_at}</p>
                 <p className="visibility">Visibility: {userElement.visibility}</p>
@@ -40,11 +44,15 @@ function Home() {
         )
   })
 
+
   return (
       <>
+       <Navbar />
         <section className="repo-container">
-            {userElements}
+       
+            {userElements}  
         </section>
+       
         <p className="view-more" onClick={viewMore}>{showViewMore}</p>
       </>
   )

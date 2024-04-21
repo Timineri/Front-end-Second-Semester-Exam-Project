@@ -2,8 +2,10 @@ import { FaRegStar, FaRegEye, FaCodeBranch } from 'react-icons/fa';
 import { TbGitFork } from 'react-icons/tb';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import "../css/index.css"
+import Navbar from './Navbar';
 
-function RepoDetails() {
+function Repodetails() {
 
   const { id } = useParams()
   const [details, setDetails] = useState({})
@@ -16,7 +18,7 @@ function RepoDetails() {
     .then((data) => {
       setDetails(data)
     })
-  }, []) 
+  }) 
 
   useEffect(() => {
     fetch(`https://api.github.com/repos/timineri/${id}/branches`)
@@ -24,7 +26,7 @@ function RepoDetails() {
     .then((data) => {
       setBranch(data)
     })
-  }, []) 
+  }) 
 
   useEffect(() => {
     fetch(`https://api.github.com/repos/timineri/${id}/deployments`)
@@ -32,10 +34,13 @@ function RepoDetails() {
     .then((data) => {
       setDeployment(data)
     })
-  }, []) 
+  }) 
 
   return (
+  <div>
+    <Navbar />
     <div id="repodetail">
+      
         <div className="repodetail-card">
             <h2 className="repo-name">{details.name}</h2>
             <div className="repo-mini-details">
@@ -45,11 +50,12 @@ function RepoDetails() {
               <p><FaCodeBranch className="icons" /> Branches: {branch.length}</p>
             </div>
             <p>Main Language: {details.language === null ? "none": details.language}</p>
-            <p>Live site: {deployment.length === 0 ? `none` : <a href={`https://mbonamensa.github.io/${details.name}`}>mbonamensa.github.io/{details.name}</a>}</p>
+            <p>Live site: {deployment.length === 0 ? `none` : <a href={`https://timineri.github.io/${details.name}`}>timineri.github.io/{details.name}</a>}</p>
             <p><a href={`https://github.com/${details.full_name}`}>View on Github</a></p>
         </div>
+    </div>
     </div>
   )
 }
 
-export default RepoDetails
+export default Repodetails
